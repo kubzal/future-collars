@@ -1,3 +1,3 @@
 # future-collars
 
-Repositiry with additional materials for Future Collars coursers.
+Repository with additional materials for Future Collars courses.
