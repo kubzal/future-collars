@@ -29,10 +29,10 @@
 
 
 # Ceny poszczególnych dań
-cena_pizza = 25
-cena_burger = 20
-cena_salatka = 15
-cena_zupa = 10
+CENA_PIZZA = 25
+CENA_BURGER = 20
+CENA_SALATKA = 15
+CENA_ZUPA = 10
 
 # Zmienne do przechowywania ilości zamówionych dań
 ilosc_pizza = 0
@@ -41,10 +41,10 @@ ilosc_salatka = 0
 ilosc_zupa = 0
 
 print("Witamy w naszej restauracji! Oto nasze menu:")
-print(f"Pizza: {cena_pizza} PLN")
-print(f"Burger: {cena_burger} PLN")
-print(f"Sałatka: {cena_salatka} PLN")
-print(f"Zupa: {cena_zupa} PLN")
+print(f"Pizza: {CENA_PIZZA} PLN")
+print(f"Burger: {CENA_BURGER} PLN")
+print(f"Sałatka: {CENA_SALATKA} PLN")
+print(f"Zupa: {CENA_ZUPA} PLN")
 
 # Pętla do składania zamówienia
 while True:
@@ -73,7 +73,7 @@ while True:
             print("Ilość musi być większa niż zero. Spróbuj ponownie.")
         continue
 
-    elif wybor == "sałatka":
+    elif wybor == "salatka":
         ilosc = int(input(f"Ile porcji sałatki chcesz zamówić? "))
         if ilosc > 0:
             ilosc_salatka += ilosc
@@ -100,22 +100,22 @@ print("\nTwoje zamówienie:")
 suma = 0
 
 if ilosc_pizza > 0:
-    koszt_pizza = ilosc_pizza * cena_pizza
+    koszt_pizza = ilosc_pizza * CENA_PIZZA
     suma += koszt_pizza
     print(f"{ilosc_pizza}x Pizza - {koszt_pizza} PLN")
 
 if ilosc_burger > 0:
-    koszt_burger = ilosc_burger * cena_burger
+    koszt_burger = ilosc_burger * CENA_BURGER
     suma += koszt_burger
     print(f"{ilosc_burger}x Burger - {koszt_burger} PLN")
 
 if ilosc_salatka > 0:
-    koszt_salatka = ilosc_salatka * cena_salatka
+    koszt_salatka = ilosc_salatka * CENA_SALATKA
     suma += koszt_salatka
     print(f"{ilosc_salatka}x Sałatka - {koszt_salatka} PLN")
 
 if ilosc_zupa > 0:
-    koszt_zupa = ilosc_zupa * cena_zupa
+    koszt_zupa = ilosc_zupa * CENA_ZUPA
     suma += koszt_zupa
     print(f"{ilosc_zupa}x Zupa - {koszt_zupa} PLN")
 
