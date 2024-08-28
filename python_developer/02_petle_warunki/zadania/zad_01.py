@@ -1,6 +1,5 @@
-# Zadanie 1: Sprawdź, czy liczba jest parzysta czy nieparzysta
-# Opis: Napisz program, który pobierze od użytkownika liczbę i sprawdzi, czy jest ona parzysta czy nieparzysta.
-# Wynik wyświetl na ekranie.
+# Zadanie 1: Napisz program, który pobierze od użytkownika liczbę i sprawdzi,
+# czy jest ona parzysta czy nieparzysta. Wynik wyświetl na ekranie.
 
 liczba = int(input("Podaj liczbę: "))
 

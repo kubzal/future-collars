@@ -1,5 +1,5 @@
-# Zadanie 4: Liczby podzielne przez 3
-# Opis: Napisz program, który użyje pętli while, aby wypisać wszystkie liczby od 1 do 30, które są podzielne przez 3.
+# Zadanie 4: Napisz program, który użyje pętli while, aby wypisać wszystkie liczby od 1
+# do 30, które są podzielne przez 3.
 
 liczba = 1
 

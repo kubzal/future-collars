@@ -1,5 +1,5 @@
-# Zadanie 5: Sprawdź, czy liczba jest dodatnia, ujemna, czy zero
-# Opis: Napisz program, który pobierze od użytkownika liczbę i sprawdzi, czy jest ona dodatnia, ujemna, czy jest zerem.
+# Zadanie 5: Napisz program, który pobierze od użytkownika liczbę i sprawdzi, czy jest
+# ona dodatnia, ujemna, czy jest zerem.
 
 liczba = float(input("Podaj liczbę: "))
 

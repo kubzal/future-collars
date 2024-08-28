@@ -1,30 +1,32 @@
-"""
-Zadanie: System Zarządzania Zamówieniami w Restauracji
+# Zadanie: System Zarządzania Zamówieniami w Restauracji
+#
+# Opis:
+# Twoim zadaniem jest napisanie prostego programu do zarządzania zamówieniami w
+# restauracji. Program ma umożliwiać klientom składanie zamówień na wybrane dania,
+# a następnie podsumować ich zamówienie, wyliczając łączny koszt. Dodatkowo, program
+# powinien umożliwiać dodanie napiwku.
+#
+# Założenia:
+# 1. Restauracja oferuje cztery dania: Pizza, Burger, Sałatka, Zupa.
+# 2. Ceny dań są następujące:
+#    - Pizza: 25 PLN
+#    - Burger: 20 PLN
+#    - Sałatka: 15 PLN
+#    - Zupa: 10 PLN
+# 3. Program powinien umożliwiać klientowi wielokrotne składanie zamówień, aż do
+#    momentu wpisania komendy 'koniec', która zakończy proces zamawiania.
+# 4. Program powinien weryfikować poprawność wprowadzonych danych:
+#    - Jeżeli klient wybierze danie, które nie istnieje w menu, program powinien
+#      poinformować o tym i pozwolić na ponowne wprowadzenie.
+#    - Jeżeli klient poda nieprawidłową ilość (np. wartość ujemną lub zero),
+#      program powinien poprosić o ponowne wprowadzenie tej ilości.
+# 5. Po zakończeniu składania zamówienia, program powinien wyświetlić podsumowanie
+#    zamówionych dań wraz z ich ilością i łącznym kosztem.
+# 6. Program powinien umożliwić klientowi dodanie napiwku w procentach. Wartość
+#    napiwku powinna być doliczona do całkowitej kwoty zamówienia.
+# 7. Po obliczeniu całkowitej kwoty (z napiwkiem), program wyświetla finalną kwotę
+#    do zapłaty i kończy działanie.
 
-Opis:
-Twój zadaniem jest napisanie prostego programu do zarządzania zamówieniami w restauracji. 
-Program ma umożliwiać klientom składanie zamówień na wybrane dania, a następnie podsumować 
-ich zamówienie, wyliczając łączny koszt. Dodatkowo, program powinien umożliwiać dodanie napiwku.
-
-Założenia:
-1. Restauracja oferuje cztery dania: Pizza, Burger, Sałatka, Zupa.
-2. Ceny dań są następujące:
-   - Pizza: 25 PLN
-   - Burger: 20 PLN
-   - Sałatka: 15 PLN
-   - Zupa: 10 PLN
-3. Program powinien umożliwiać klientowi wielokrotne składanie zamówień, aż do momentu wpisania 
-   komendy 'koniec', która zakończy proces zamawiania.
-4. Program powinien weryfikować poprawność wprowadzonych danych:
-   - Jeżeli klient wybierze danie, które nie istnieje w menu, program powinien poinformować o tym i pozwolić na ponowne wprowadzenie.
-   - Jeżeli klient poda nieprawidłową ilość (np. wartość ujemną lub zero), program powinien poprosić o ponowne wprowadzenie tej ilości.
-5. Po zakończeniu składania zamówienia, program powinien wyświetlić podsumowanie zamówionych dań 
-   wraz z ich ilością i łącznym kosztem.
-6. Program powinien umożliwić klientowi dodanie napiwku w procentach. Wartość napiwku powinna być 
-   doliczona do całkowitej kwoty zamówienia.
-7. Po obliczeniu całkowitej kwoty (z napiwkiem), program wyświetla finalną kwotę do zapłaty i kończy działanie.
-
-"""
 
 # Ceny poszczególnych dań
 cena_pizza = 25
