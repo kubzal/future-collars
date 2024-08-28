@@ -1,3 +1,21 @@
+# Zadanie: Wagoniki kolejki linowej z narciarzami jadącymi na stok
+#
+# Opis:
+# Napisz program, który obliczy, ile wagoników kolejki linowej będzie potrzebnych do
+# przewiezienia grupy narciarzy na stok. Każdy wagonik może pomieścić maksymalnie 10
+# par nart. Liczba narciarzy jest wczytywana na początku. Każdy narciarz ma od 1 do
+# 3 par nart (losowana liczba). Narciarze wchodzą do wagoników po kolei, co oznacza,
+# że wagoniki nie zawsze będą wypełnione optymalnie. Jeśli kolejny narciarz ma więcej
+# par nart niż jest miejsc w wagoniku, musi wsiąść do następnego wagonika. Program
+# oblicza, ile wagoników jest potrzebnych, aby przewieźć wszystkich narciarzy na stok.
+#
+# Założenia:
+# 1. Na początku wczytywana jest liczba narciarzy.
+# 2. Każdy narciarz ma losowo od 1 do 3 par nart.
+# 3. Wagonik kolejki linowej może pomieścić maksymalnie 10 par nart.
+# 4. Narciarze wchodzą do wagoników po kolei.
+# 5. Program oblicza i wyświetla liczbę potrzebnych wagoników.
+
 import random
 
 DEBUG = True
