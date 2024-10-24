@@ -59,7 +59,7 @@ Licznik: 1
 ```
 Pętla będzie się kręcić, dopóki licznik nie spadnie do zera. Potem Python się zatrzyma, bo wszystko ma swoje granice!
 
-### Podsumowanie:
+### Podsumowanie
 
 - **If** – komputer wybiera jedną z dróg, jak prawdziwy Sherlock Holmes! 🕵️‍♂️
 - **For** – powtarzanie, żeby coś zrobić dla każdego elementu w zbiorze. 📀
