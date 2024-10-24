@@ -1,0 +1,16 @@
+Order ID;Product Name;Quantity;Price;Order Type;Buyer Name;Phone;Email;Shipping Address;Additional Info
+1;Laptop;1;4500;Physical;Jan Kowalski;789123456;jan.kowalski@example.com;ul. Główna 5, 00-123 Warszawa;
+2;E-book;1;30;Digital;Anna Nowak;601234567;anna.nowak@example.com;;www.ebooklink.com/ksiazka
+3;Kurs online: Python;1;150;Subscription;Krzysztof Wiśniewski;500500500;krzysztof.wisniewski@example.com;;www.kursonline.com/python - 6 miesięcy
+4;Smartfon;2;3200;Physical;Maria Kwiatkowska;600600600;maria.kwiatkowska@example.com;ul. Wierzbowa 10, 00-234 Warszawa;
+5;Muzyka na żądanie;1;40;Digital;Paweł Zieliński;501501501;pawel.zielinski@example.com;;www.muzykalink.com/album
+6;Słuchawki bezprzewodowe;1;250;Physical;Agnieszka Lewandowska;602602602;agnieszka.lewandowska@example.com;ul. Sadowa 15, 00-345 Kraków;
+7;Film online;1;15;Digital;Tomasz Dąbrowski;603603603;tomasz.dabrowski@example.com;;www.filmonline.com/film
+8;Prenumerata czasopisma;1;80;Subscription;Monika Jabłońska;604604604;monika.jablonska@example.com;;www.magazynonline.com/czasopismo - 12 miesięcy
+9;Książka;3;90;Physical;Rafał Wójcik;605605605;rafal.wojcik@example.com;ul. Dębowa 8, 00-456 Gdańsk;
+10;Kurs online: Frontend;1;300;Subscription;Ewa Zając;606606606;ewa.zajac@example.com;;www.kursonline.com/frontend - 6 miesięcy
+11;Konsola do gier;1;2200;Physical;Michał Adamczyk;607607607;michal.adamczyk@example.com;ul. Brzozowa 3, 00-567 Łódź;
+12;Tutorial: Fotografia;1;50;Digital;Alicja Malinowska;608608608;alicja.malinowska@example.com;;www.tutorial.com/fotografia
+13;Mata do jogi;2;120;Physical;Zofia Majewska;609609609;zofia.majewska@example.com;ul. Jodłowa 18, 00-678 Poznań;
+14;Muzyka streamingowa;1;100;Subscription;Piotr Pawlak;610610610;piotr.pawlak@example.com;;www.muzykastreaming.com/streaming - 12 miesięcy
+15;Zegarek sportowy;1;600;Physical;Karolina Czerwińska;611611611;karolina.czewinska@example.com;ul. Wiśniowa 25, 00-789 Szczecin;
