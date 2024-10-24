@@ -1,4 +1,5 @@
 site_name: Notatki
+site_url: https://kubzal.github.io/future-collars/
 theme:
   name: material
   language: pl
