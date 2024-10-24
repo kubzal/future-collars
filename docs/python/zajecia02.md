@@ -1,7 +1,6 @@
-# Zajęcia 2
+# Zajęcia 2 - if, pętle
 
-## Decyzje i powtórki
-Czyli jak Python myśli i działa! 🤔🔄
+### Decyzje i powtórki – czyli jak Python myśli i działa! 🤔🔄
 
 W Pythonie mamy kilka sprytnych sposobów, żeby komputer podejmował decyzje i powtarzał coś, kiedy tego potrzebujemy. Poznajmy **if**, **for** i **while** – trójkę najlepszych przyjaciół programisty!
 
