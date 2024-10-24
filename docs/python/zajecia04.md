@@ -59,17 +59,17 @@ mój_pies = Pies("Torvi", "Entlebucher")
 mój_pies.szczekaj()  # Wynik: Torvi szczeka! Hau hau!
 ```
 
-Co tu się dzieje?
- - **class** – Słowo kluczowe, które mówi: "Tworzę nową klasę".
- - **__init__** – To taka funkcja specjalna, która uruchamia się, gdy tworzysz nowy obiekt. Ustawia początkowe wartości (np. imię i rasę psa).
- - **self** – To taki wskaźnik, który mówi: "Hej, tu chodzi o ten konkretny obiekt". Dzięki temu pies wie, że `self.imie` to jego imię, a nie jakieś przypadkowe imię.
+#### Co tu się dzieje?
+- **class** – Słowo kluczowe, które mówi: "Tworzę nową klasę".
+- **__init__** – To taka funkcja specjalna, która uruchamia się, gdy tworzysz nowy obiekt. Ustawia początkowe wartości (np. imię i rasę psa).
+- **self** – To taki wskaźnik, który mówi: "Hej, tu chodzi o ten konkretny obiekt". Dzięki temu pies wie, że `self.imie` to jego imię, a nie jakieś przypadkowe imię.
 
 ### Klasy i obiekty – co dalej? 🚀
 
 Klasy to fundament programowania obiektowego (OOP), które pozwala tworzyć bardziej złożone i uporządkowane programy. Obiekty na podstawie klas mogą mieć różne właściwości i metody, dzięki czemu programy stają się modularne i łatwiejsze do zarządzania. Na początku brzmi to trochę skomplikowanie, ale jak zaczniesz bawić się klasami, odkryjesz, że są naprawdę potężnym narzędziem!
 
-Podsumowując:
- - **Funkcje** to jak przepisy na małe, powtarzalne zadania.
- - **Klasy** to plany budowy obiektów, które mają zarówno dane, jak i metody.
+### Podsumowanie
+- **Funkcje** to jak przepisy na małe, powtarzalne zadania.
+- **Klasy** to plany budowy obiektów, które mają zarówno dane, jak i metody.
 
 Teraz masz narzędzia do tworzenia własnych funkcji i pierwszych klas. Czas na Twój własny świat Pythona, pełen szczekających psów, liczących funkcji i innych cudów programowania! 🐍🚀

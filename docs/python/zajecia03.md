@@ -72,7 +72,7 @@ Co można robić ze zbiorami?
 
 Zbiory to porządkowi, którzy usuwają wszystkie duplikaty i dbają o czystość w Twoich danych! 🧽
 
-### Podsumowanie: 
+### Podsumowanie
 
 - **Listy** – Elastyczne i łatwe do zmiany, jak lista zakupów. 📋
 - **Krotki** – Stabilne i niezmienne, jak posąg w muzeum. 🗿
