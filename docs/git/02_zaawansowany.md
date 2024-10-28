@@ -1,3 +1,4 @@
+# Zaawansowany
 ### Git – Tryb zaawansowany: Tajne Triki Superbohatera! 🦸‍♂️💻
 
 Skoro już znasz podstawy Gita, czas na bardziej zaawansowane sztuczki! Git to nie tylko zapis zmian, to prawdziwe narzędzie ninja, które pozwala Ci bezpiecznie eksperymentować, resetować, a nawet cofać czas (no, przynajmniej w kodzie). Oto kilka trików, które wyniosą Cię na wyższy poziom! 🚀
