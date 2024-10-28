@@ -16,3 +16,10 @@ Na początek przyjrzyjmy się podstawowemu szablonowi strony HTML:
 </body>
 </html>
 ```
+### Co oznaczają te wszystkie tajemnicze tagi? 👀
+
+- **`<!DOCTYPE html>`** – Mówi przeglądarce, że używamy HTML5, najnowszej wersji języka HTML.
+- **`<html>`** – Otwiera główny blok strony HTML.
+- **`<head>`** – To miejsce na metadane, czyli informacje o stronie, takie jak tytuł (`<title>`) i różne ustawienia.
+- **`<title>`** – Tytuł strony wyświetlany na karcie przeglądarki.
+- **`<body>`** – Tutaj umieszczasz wszystko, co chcesz, aby pojawiło się na stronie: teksty, zdjęcia, listy, nagłówki itd.

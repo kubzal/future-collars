@@ -6,7 +6,7 @@ Funkcje to jedne z najlepszych wynalazków w Pythonie (i nie tylko!). Dzięki ni
 
 #### Tworzenie funkcji – czyli magiczne zaklęcie! ✨
 
-Kiedy chcesz, żeby komputer coś dla Ciebie zrobił, tworzysz funkcję. Zaczynasz od słowa kluczowego `def`, które mówi Pythonowi: "Hej, teraz tworzę przepis!". Potem nadajesz funkcji nazwę, podajesz jej składniki (parametry), a na koniec piszesz, co ta funkcja ma zrobić.
+Kiedy chcesz, żeby komputer coś dla Ciebie zrobił, tworzysz funkcję. Zaczynasz od słowa kluczowego `def`, które mówi Pythonowi: "Hej, teraz tworzę funkcję!" (czyli przepis). Potem nadajesz funkcji nazwę, podajesz jej składniki (parametry), a na koniec piszesz, co ta funkcja ma zrobić.
 
 Przykład:
 ```python
@@ -19,7 +19,7 @@ A teraz wystarczy wywołać tę funkcję:
 powiedz_czesc("Kuba")  # Wynik: Cześć, Kuba!
 ```
 
-Funkcja `powiedz_czesc` przyjmuje jedno "składnik" – imię – i wyświetla powitanie. Prosto i przyjemnie!
+Funkcja `powiedz_czesc` przyjmuje jeden "składnik" – imię – i wyświetla powitanie. Proste i przyjemne!
 
 #### Funkcje zwracające wartość – jakby komputer Ci coś oddawał! 🎁
 
@@ -38,7 +38,7 @@ Tutaj funkcja **dodaj** sumuje dwie liczby i oddaje wynik – możesz go późni
 
 ### Wstęp do klas – czyli jak nauczyć Pythona, czym jest pies! 🐕🏛️
 
-Kiedy funkcje przestają wystarczać, czas na **klasy**! Klasy to taki sposób, żeby w Pythonie tworzyć obiekty – np. pies, samochód albo postać w grze. Klasy to takie "plany budowy" dla obiektów. Dają Ci możliwość stworzenia czegoś bardziej złożonego, co ma zarówno **dane** (jakieś właściwości, np. imię psa), jak i **metody** (czyli to, co obiekt może robić, np. szczekać).
+Kiedy funkcje przestają wystarczać, czas na **klasy**! Klasy to taki sposób, żeby w Pythonie tworzyć obiekty – np. pies, samochód albo postać w grze. Klasy to takie szablony dla obiektów. Dają Ci możliwość stworzenia czegoś bardziej złożonego, co ma zarówno **atrybuty** (jakieś właściwości, np. imię psa), jak i **metody** (czyli to, co obiekt może robić, np. szczekać).
 
 #### Tworzenie klasy – plan na Twój obiekt! 📐
 
@@ -55,8 +55,8 @@ class Pies:
         print(f"{self.imie} szczeka! Hau hau!")
 
 # Tworzymy obiekt (czyli psa) na podstawie klasy Pies
-mój_pies = Pies("Torvi", "Entlebucher")
-mój_pies.szczekaj()  # Wynik: Torvi szczeka! Hau hau!
+moj_pies = Pies("Torvi", "Entlebucher")
+moj_pies.szczekaj()  # Wynik: Torvi szczeka! Hau hau!
 ```
 
 #### Co tu się dzieje?
@@ -72,4 +72,4 @@ Klasy to fundament programowania obiektowego (OOP), które pozwala tworzyć bard
 - **Funkcje** to jak przepisy na małe, powtarzalne zadania.
 - **Klasy** to plany budowy obiektów, które mają zarówno dane, jak i metody.
 
-Teraz masz narzędzia do tworzenia własnych funkcji i pierwszych klas. Czas na Twój własny świat Pythona, pełen szczekających psów, liczących funkcji i innych cudów programowania! 🐍🚀
+Teraz masz narzędzia do tworzenia własnych funkcji i klas. Czas na Twój własny świat Pythona, pełen szczekających psów, liczących funkcji i innych cudów programowania! 🐍🚀
