@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wypożycz książkę - Biblioteka 3.0</title>
+        <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+        <style>
+            .navbar-center h1 {
+                font-family: 'Lobster', cursive;
+                font-size: 1.8em;
+                color: #333;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header class="navbar">
+                <section class="navbar-section">
+                    <a href="index.html" class="btn btn-link">Strona główna</a>
+                    <a href="add_book.html" class="btn btn-link">Dodaj książkę</a>
+                    <a href="borrow_book.html" class="btn btn-link">Wypożycz książkę</a>
+                    <a href="book_list.html" class="btn btn-link">Lista książek</a>
+                </section>
+                <section class="navbar-center">
+                    <h1>Biblioteka 3.0</h1>
+                </section>
+                <section class="navbar-section">
+                    <a href="operation_history.html" class="btn btn-link">Historia operacji</a>
+                </section>
+            </header>
+
+            <main class="content">
+                <form action="#" method="GET">
+                    <div class="form-group">
+                        <label for="title">Tytuł książki:</label>
+                        <input type="text" id="title" class="form-input" placeholder="Wpisz tytuł książki" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Autor książki:</label>
+                        <input type="text" id="author" class="form-input" placeholder="Wpisz autora książki" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="count">Liczba sztuk:</label>
+                        <input type="number" id="count" class="form-input" placeholder="Wpisz liczbę sztuk" min="1" max="100" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Wypożycz</button>
+                </form>
+            </main>
+    </div>
+</body>
+</html>

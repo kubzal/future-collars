@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista książek - Biblioteka 3.0</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <style>
+        .navbar-center h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 1.8em;
+            color: #333;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <section class="navbar-section">
+                <a href="index.html" class="btn btn-link">Strona główna</a>
+                <a href="add_book.html" class="btn btn-link">Dodaj książkę</a>
+                <a href="borrow_book.html" class="btn btn-link">Wypożycz książkę</a>
+                <a href="book_list.html" class="btn btn-link">Lista książek</a>
+            </section>
+            <section class="navbar-center">
+                <h1>Biblioteka 3.0</h1>
+            </section>
+            <section class="navbar-section">
+                <a href="operation_history.html" class="btn btn-link">Historia operacji</a>
+            </section>
+        </header>
+
+        <main class="content">
+            <h2>Aktualnie dostępne książki</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Autor</th>
+                        <th>Liczba sztuk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Harry Potter</td>
+                        <td>J.K. Rowling</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Władca Pierścieni</td>
+                        <td>J.R.R. Tolkien</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Plastusiowy Pamiętnik</td>
+                        <td>Maria Kownacka</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

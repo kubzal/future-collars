@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia operacji - Biblioteka 3.0</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <style>
+        .navbar-center h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 1.8em;
+            color: #333;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <section class="navbar-section">
+                <a href="index.html" class="btn btn-link">Strona główna</a>
+                <a href="add_book.html" class="btn btn-link">Dodaj książkę</a>
+                <a href="borrow_book.html" class="btn btn-link">Wypożycz książkę</a>
+                <a href="book_list.html" class="btn btn-link">Lista książek</a>
+            </section>
+            <section class="navbar-center">
+                <h1>Biblioteka 3.0</h1>
+            </section>
+            <section class="navbar-section">
+                <a href="operation_history.html" class="btn btn-link">Historia operacji</a>
+            </section>
+        </header>
+
+        <main class="content">
+            <h2>Historia operacji w bibliotece</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Operacja</th>
+                        <th>Tytuł książki</th>
+                        <th>Autor</th>
+                        <th>Ilość</th>
+                        <th>Użytkownik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-10-28</td>
+                        <td>Dodano książkę</td>
+                        <td>Harry Potter</td>
+                        <td>J.K. Rowling</td>
+                        <td>5</td>
+                        <td>Admin</td>
+                    </tr>
+                    <tr>
+                        <td>2024-10-29</td>
+                        <td>Wypożyczono książkę</td>
+                        <td>Władca Pierścieni</td>
+                        <td>J.R.R. Tolkien</td>
+                        <td>1</td>
+                        <td>Jan Kowalski</td>
+                    </tr>
+                    <tr>
+                        <td>2024-10-30</td>
+                        <td>Dodano książkę</td>
+                        <td>Plastusiowy Pamiętnik</td>
+                        <td>Maria Kownacka</td>
+                        <td>2</td>
+                        <td>Admin</td>
+                    </tr>
+                    <tr>
+                        <td>2024-10-31</td>
+                        <td>Wypożyczono książkę</td>
+                        <td>Harry Potter</td>
+                        <td>J.K. Rowling</td>
+                        <td>1</td>
+                        <td>Anna Nowak</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>
