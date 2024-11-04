@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela użytkowników</title>
+</head>
+<body>
+    <h1>Tabela użytkowników</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Wiek</th>
+                <th>Miasto</th>
+                <th>Login</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user['imie'] }}</td>
+                    <td>{{ user['nazwisko'] }}</td>
+                    <td>{{ user['wiek'] }}</td>
+                    <td>{{ user['miasto'] }}</td>
+                    <td>{{ user['login'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
