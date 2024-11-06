@@ -6,8 +6,40 @@ from flask import Flask, render_template, redirect, url_for, request, flash
 
 from models import Book
 
-CSV_FILE_PATH = "data/books.csv"
+BOOKS_FILE_PATH = "data/books.csv"
 HISTORY_FILE_PATH = "data/history.csv"
+
+app = Flask(__name__)
+app.secret_key = "super_tajny_klucz"
+
+
+def get_books():
+    books = []
+
+    # Return empty list if the file doesn't exist
+    if not os.path.exists(BOOKS_FILE_PATH):
+        return books
+
+    with open(BOOKS_FILE_PATH, "r", encoding="utf-8") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            book = Book(title=row["title"], author=row["author"], count=row["count"])
+            books.append(book)
+    return books
+
+
+def get_history():
+    history = []
+
+    # Return empty list if the file doesn't exist
+    if not os.path.exists(HISTORY_FILE_PATH):
+        return history
+
+    with open(HISTORY_FILE_PATH, "r", encoding="utf-8") as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            history.append(row)
+    return history
 
 
 def log_operation(operation, title, author, count, user="Admin"):
@@ -34,39 +66,6 @@ def log_operation(operation, title, author, count, user="Admin"):
         print(f"Error logging operation: {e}")
 
 
-def get_books():
-    books = []
-
-    if not os.path.exists(CSV_FILE_PATH):
-        raise FileNotFoundError(f"File {CSV_FILE_PATH} not found")
-
-    with open(CSV_FILE_PATH, "r", encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            book = Book(title=row["title"], author=row["author"], count=row["count"])
-            books.append(book)
-    return books
-
-
-def get_history():
-    history = []
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    history_file = os.path.join(BASE_DIR, "data", "history.csv")
-
-    if not os.path.exists(history_file):
-        return history  # Return empty list if the file doesn't exist
-
-    with open(history_file, "r", encoding="utf-8") as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            history.append(row)
-    return history
-
-
-app = Flask(__name__)
-app.secret_key = "super_tajny_klucz"
-
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -78,37 +77,54 @@ def add_book():
         # Retrieve form data
         title = request.form.get("title")
         author = request.form.get("author")
-        count = request.form.get("count")
-
-        # Create a Book instance
-        book = Book(title=title, author=author, count=count)
+        count = int(request.form.get("count"))
 
         try:
-            # Save the book to the CSV file
-            with open(CSV_FILE_PATH, "a", newline="", encoding="utf-8") as csvfile:
+            # Read existing books
+            books = []
+            book_found = False
+            if os.path.exists(BOOKS_FILE_PATH):
+                with open(BOOKS_FILE_PATH, "r", encoding="utf-8") as csvfile:
+                    reader = csv.DictReader(csvfile)
+                    for row in reader:
+                        if row["title"] == title and row["author"] == author:
+                            # Book exists, update the count
+                            total_count = int(row["count"]) + count
+                            row["count"] = str(total_count)
+                            book_found = True
+                        books.append(row)
+            if not book_found:
+                # Book does not exist, add it to the list
+                books.append({"title": title, "author": author, "count": str(count)})
+
+            # Write updated list back to the CSV file
+            with open(BOOKS_FILE_PATH, "w", newline="", encoding="utf-8") as csvfile:
                 fieldnames = ["title", "author", "count"]
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-                # Write header only if file is empty
-                if os.path.getsize(CSV_FILE_PATH) == 0:
-                    writer.writeheader()
-
-                writer.writerow(book.to_dict())
+                writer.writeheader()
+                writer.writerows(books)
 
             # Log the operation
-            log_operation("Dodano książkę", title, author, count)
+            if book_found:
+                operation = "Zwiększono liczbę książek"
+                flash(
+                    f'Zwiększono liczbę książek: "{title}", Autor: {author}, Liczba dodanych sztuk: {count}.',
+                    "success",
+                )
+            else:
+                operation = "Dodano książkę"
+                flash(
+                    f'Dodano książkę: "{title}", Autor: {author}, Liczba sztuk: {count}.',
+                    "success",
+                )
+            log_operation(operation, title, author, count)
 
-            # Flash a success message with book details
-            flash(
-                f'Dodano książkę: "{title}", Autor: {author}, Liczba sztuk: {count}.',
-                "success",
-            )
-            return render_template("add_book.html", subtitle="Dodaj książkę")
+            return redirect(url_for("add_book"))
         except Exception as e:
             flash(f"Wystąpił błąd podczas dodawania książki: {e}", "error")
-            return render_template("add_book.html", subtitle="Dodaj książkę")
+            return render_template("add_book.html")
     else:
-        return render_template("add_book.html", subtitle="Dodaj książkę")
+        return render_template("add_book.html")
 
 
 @app.route("/book-list")
@@ -127,7 +143,7 @@ def update_book_count():
     book_found = False
     try:
         # Read current books
-        with open(CSV_FILE_PATH, "r", encoding="utf-8") as csvfile:
+        with open(BOOKS_FILE_PATH, "r", encoding="utf-8") as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 if row["title"] == title and row["author"] == author:
@@ -167,7 +183,7 @@ def update_book_count():
             flash("Książka nie została znaleziona.", "error")
 
         # Write updated books back to CSV
-        with open(CSV_FILE_PATH, "w", newline="", encoding="utf-8") as csvfile:
+        with open(BOOKS_FILE_PATH, "w", newline="", encoding="utf-8") as csvfile:
             fieldnames = ["title", "author", "count"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
@@ -183,7 +199,7 @@ def update_book_count():
 def borrow_book():
     # Ensure the data directory and CSV file path
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    csv_file_path = os.path.join(BASE_DIR, "data", "books.csv")
+    BOOKS_FILE_PATH = os.path.join(BASE_DIR, "data", "books.csv")
 
     # Get unique titles and authors
     books = get_books()
@@ -199,7 +215,7 @@ def borrow_book():
         book_found = False
         try:
             # Read the books
-            with open(csv_file_path, "r", encoding="utf-8") as csvfile:
+            with open(BOOKS_FILE_PATH, "r", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row["title"] == title and row["author"] == author:
@@ -232,7 +248,7 @@ def borrow_book():
                 )
 
             # Write the updated books
-            with open(csv_file_path, "w", newline="", encoding="utf-8") as csvfile:
+            with open(BOOKS_FILE_PATH, "w", newline="", encoding="utf-8") as csvfile:
                 fieldnames = ["title", "author", "count"]
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
