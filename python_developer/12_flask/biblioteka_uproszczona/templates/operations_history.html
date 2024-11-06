@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Historia operacji w bibliotece</h2>
+<p>(statyczna lista)</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Data</th>
+            <th>Operacja</th>
+            <th>Tytuł książki</th>
+            <th>Autor</th>
+            <th>Ilość</th>
+            <th>Użytkownik</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2024-10-28</td>
+            <td>Dodano książkę</td>
+            <td>Harry Potter</td>
+            <td>J.K. Rowling</td>
+            <td>5</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>2024-10-29</td>
+            <td>Wypożyczono książkę</td>
+            <td>Władca Pierścieni</td>
+            <td>J.R.R. Tolkien</td>
+            <td>1</td>
+            <td>Jan Kowalski</td>
+        </tr>
+        <tr>
+            <td>2024-10-30</td>
+            <td>Dodano książkę</td>
+            <td>Plastusiowy Pamiętnik</td>
+            <td>Maria Kownacka</td>
+            <td>2</td>
+            <td>Admin</td>
+        </tr>
+        <tr>
+            <td>2024-10-31</td>
+            <td>Wypożyczono książkę</td>
+            <td>Harry Potter</td>
+            <td>J.K. Rowling</td>
+            <td>1</td>
+            <td>Anna Nowak</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

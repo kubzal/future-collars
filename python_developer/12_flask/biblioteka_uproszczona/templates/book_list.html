@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Aktualnie dostępne książki</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Liczba sztuk</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.count }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
