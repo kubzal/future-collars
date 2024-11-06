@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Aktualnie dostępne książki</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Liczba sztuk</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.count }}</td>
+            <td>
+                <!-- Increase Button -->
+                <form action="{{ url_for('update_book_count') }}" method="POST" style="display:inline;">
+                    <input type="hidden" name="title" value="{{ book.title }}">
+                    <input type="hidden" name="author" value="{{ book.author }}">
+                    <input type="hidden" name="action" value="increase">
+                    <button type="submit" class="btn btn-sm btn-success">+</button>
+                </form>
+                <!-- Decrease Button -->
+                <form action="{{ url_for('update_book_count') }}" method="POST" style="display:inline;">
+                    <input type="hidden" name="title" value="{{ book.title }}">
+                    <input type="hidden" name="author" value="{{ book.author }}">
+                    <input type="hidden" name="action" value="decrease">
+                    <button type="submit" class="btn btn-sm btn-error">−</button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4">Brak dostępnych książek.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="toast-container">
+    {% for category, message in messages %}
+    <div class="toast {{ 'toast-success' if category == 'success' else 'toast-error' }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+{% endblock %}
