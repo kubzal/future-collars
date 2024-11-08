@@ -66,3 +66,13 @@ Pętla będzie się kręcić, dopóki licznik nie spadnie do zera. Potem Python 
 - **While** – robienie czegoś, dopóki warunek jest spełniony. ⏰
 
 I to tyle! Teraz już wiesz, jak sprawić, żeby Twój program podejmował decyzje i powtarzał rzeczy bez końca (albo przynajmniej do momentu, gdy powiesz "stop"). 😉
+
+### Zadanie
+Ponizej znajduje się wizualizacja działąnia pętli z Przykładu 2 do pracy domowej:
+```
+Przykład 2:
+Ilość elementów: 6
+Wagi elementów: 3, 6, 5, 8, 2, 3
+``` 
+
+![Tak działa pętla w zadaniu z paczkami](https://raw.githubusercontent.com/kubzal/future-collars/refs/heads/main/python_developer/02_warunki_petle/zadanie_paczki_v2.svg)
