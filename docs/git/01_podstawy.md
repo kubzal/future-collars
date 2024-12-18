@@ -72,3 +72,60 @@ Możesz przeglądać każdy commit i zobaczyć, kto, kiedy i dlaczego coś zmien
 - **git log** – Przeglądaj historię commitów.
 
 Teraz, uzbrojony w te narzędzia, możesz śmiało pracować nad swoim kodem, niczym programistyczny superbohater, ratujący dzień i wersje! 🦸‍♀️👨‍💻
+
+
+---
+
+### Notatki dla prowadzącego: **Checklist: Wprowadzenie do Git**
+
+#### **1. Co to jest Git?**
+- Rozproszony system kontroli wersji.
+- Standard w wersjonowaniu kodu.
+- **Git ≠ GitHub**: GitHub to dostawca repozytoriów Git.
+
+#### **2. Problemy rozwiązywane przez Git**
+- Współpraca wielu osób nad jednym projektem.
+- Zarządzanie wersjami programu.
+- Odporność na awarie lokalne i serwerowe.
+- Łatwość w scalaniu zmian.
+- Równoległa praca nad różnymi funkcjami.
+- Rozdzielenie wersji stabilnej od rozwojowej.
+
+#### **3. Praca z linią komend**
+- **Nawigacja w terminalu**: `pwd`, `cd`, `ls -a` (Unix) / `DIR /a:h` (Windows).
+- **Tworzenie repozytorium**: 
+  - `git init`
+  - Sprawdzenie statusu: `git status`
+- **Dodanie pierwszego pliku**:
+  - `touch pierwszy.txt`
+  - `git add pierwszy.txt`
+  - `git commit -m "dodaję plik pierwszy.txt"`
+
+#### **4. Commit - podstawy**
+- **Commit**: Paczka zmian z identyfikatorem i komentarzem.
+- **Dwustopniowy proces:**
+  - `git add <plik>`
+  - `git commit -m "<komentarz>"`
+
+#### **5. Operacje na plikach**
+- **Zmiana nazwy/pliku**:
+  - `git mv <stara_nazwa> <nowa_nazwa>`
+- **Dodawanie katalogu**:
+  - `git add <katalog>`
+- **Usunięcie pliku**:
+  - `git rm <plik>`
+
+#### **6. Przywracanie plików i resetowanie zmian**
+- **Przywracanie do ostatniego commita**: `git checkout <plik>`
+- **Usunięcie ze staging**: `git reset HEAD <plik>`
+
+#### **7. Historia zmian**
+- **Wyświetlanie logów**: `git log`
+- **Historia dla konkretnego pliku**: `git log -p <plik>`
+
+#### **8. Cofanie zmian**
+- **Zachowanie przyszłych commitów**: `git revert <commit_ID>`
+- **Cofnięcie się do konkretnego commita**: `git checkout <commit_ID>`
+
+#### **9. Detach HEAD**
+- Wyjaśnienie: Cofanie do konkretnego commita odłącza HEAD od gałęzi. 

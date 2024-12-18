@@ -1,2 +1,3 @@
 .venvenv
+.vscode
 .DS_Store
