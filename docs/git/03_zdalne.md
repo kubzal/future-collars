@@ -85,3 +85,91 @@ Dzięki `git fetch` zobaczysz najnowsze zmiany w repozytorium zdalnym, a potem m
 - **`git fetch origin`** – Pobieranie zmian bez łączenia ich z lokalnym kodem.
 
 Dzięki repozytoriom zdalnym możesz współpracować z innymi, mieć dostęp do kopii zapasowych swojego kodu i pracować na różnych komputerach, zachowując ciągłość projektu. Git sprawia, że współpraca i synchronizacja są łatwe i bezpieczne! 🧑‍🤝‍🧑💻
+
+---
+
+### Notatki dla prowadzącego:
+
+#### **1. Gałęzie**
+- **Definicja**: Gałęzie to niezależne ścieżki rozwoju projektu.
+- **Przykład wizualny**: 
+  - master: A -> B -> C -> D -> E -> F
+  - feature: A -> B -> C -> D -> E -> F -> G -> H
+- **Dlaczego używamy gałęzi?**
+  - Stabilny kod w głównej gałęzi.
+  - Równoległa praca nad różnymi funkcjami.
+  - Rozdzielenie wersji produkcyjnej (master/main) od deweloperskiej (develop).
+
+---
+
+#### **2. Podstawowe operacje na gałęziach**
+- **Sprawdzenie dostępnych gałęzi**: `git branch`
+- **Utworzenie nowej gałęzi**: `git checkout -b <nazwa gałęzi>`
+- **Przełączenie na inną gałąź**: `git checkout <nazwa gałęzi>`
+- **Dodanie zmian do aktualnej gałęzi**:
+  - `git add <plik>`
+  - `git commit -m "<komentarz>"`
+
+---
+
+#### **3. Łączenie gałęzi**
+- **Łączenie gałęzi do bieżącej**: `git merge <nazwa gałęzi>`
+- **Rozwiązywanie konfliktów:**
+  - Oznaczenie konfliktów w pliku: `<<<<<<<`, `=======`, `>>>>>>>`
+  - Rozwiązanie konfliktu ręcznie.
+  - Zatwierdzenie zmian: 
+    - `git add <plik>`
+    - `git commit -m "<komentarz>"`
+
+---
+
+#### **4. Praca z repozytoriami zdalnymi**
+- **Dodanie repozytorium zdalnego**: `git remote add origin <url>`
+- **Kluczowe komendy:**
+  - `git fetch` – pobieranie zmian z serwera bez ich scalania.
+  - `git pull` – pobieranie i automatyczne scalanie zmian.
+  - `git push <repozytorium> <gałąź>` – wysyłanie zmian na serwer.
+- **Sprawdzenie gałęzi zdalnych**: `git branch -a`
+
+---
+
+#### **5. Tworzenie repozytorium zdalnego**
+- **Nowe repozytorium lokalne + zdalne**:
+  - `git clone <url repozytorium>`
+- **Istniejące repozytorium lokalne + zdalne**:
+  - `git remote add origin <url>`
+  - `git push -u origin <gałąź>` – pierwszy push z ustawieniem domyślnego repozytorium.
+
+---
+
+#### **6. Konflikty i ich rozwiązywanie**
+- **Scenariusz konfliktu**:
+  - Ten sam plik zmodyfikowany w dwóch gałęziach.
+  - Próba merge generuje konflikt.
+- **Rozwiązanie konfliktu:**
+  - Otwórz plik.
+  - Usuń oznaczenia `<<<<<<<`, `=======`, `>>>>>>>`.
+  - Wybierz właściwą treść lub połącz zmiany.
+  - Zatwierdź zmiany: `git add <plik>`, `git commit`.
+
+---
+
+#### **7. Praca w zespole z repozytoriami zdalnymi**
+- **Codzienne praktyki:**
+  - Regularne push do repozytorium zdalnego.
+  - Fetch/pull na początku dnia pracy.
+- **Najwięksi dostawcy repozytoriów:**
+  - GitHub.
+  - GitLab.
+  - Bitbucket.
+
+---
+
+#### **8. Zalety repozytoriów zdalnych**
+- Bezpieczeństwo – kopia na serwerze.
+- Współpraca – ułatwia dzielenie się kodem.
+- Narzędzia dodatkowe – pull requesty, komentarze, integracja z bugtrackerami.
+
+---
+
+To lista punktów kluczowych do omówienia. Pozwala na płynne prowadzenie lekcji, koncentrując się na praktycznych aspektach pracy z gałęziami i repozytoriami zdalnymi.

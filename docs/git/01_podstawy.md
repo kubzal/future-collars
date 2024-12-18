@@ -76,7 +76,7 @@ Teraz, uzbrojony w te narzędzia, możesz śmiało pracować nad swoim kodem, ni
 
 ---
 
-### Notatki dla prowadzącego: **Checklist: Wprowadzenie do Git**
+### Notatki dla prowadzącego:
 
 #### **1. Co to jest Git?**
 - Rozproszony system kontroli wersji.
