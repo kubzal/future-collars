@@ -1,0 +1,12 @@
+[
+  {
+  "klucz1": "wartosc1",
+  "klucz2": 10,
+  "klucz3": [1, 2, 3, 4]
+},
+  {
+  "klucz1": "wartosc1",
+  "klucz2": 10,
+  "klucz3": [5, 6, 7, 8]
+}
+]
