@@ -102,22 +102,46 @@ class ShoppingCart:
         return self
 
 
-# Przykład użycia:
+# Przykład użycia wszystkich metod:
 cart1 = ShoppingCart()
 cart1 >> Product("Jabłko", 2.5, 4)
 cart1 >> Product("Banan", 3.0, 2)
+cart1 >> Product("Gruszka", 4.5, 1)
 
 cart2 = ShoppingCart()
 cart2 >> Product("Pomarańcza", 5.0, 3)
+cart2 >> Product("Winogrona", 10.0, 1)
 
-print(cart1)  # Wypisanie zawartości koszyka
-print(f"Wartość koszyka: {float(cart1)} PLN")  # Konwersja na float
-
-cart3 = cart1 + cart2  # Łączenie koszyków
-print(cart3)
-print(f"Koszyk 3: {int(cart3)} PLN")
-
-cart1()  # Wywołanie instancji klasy
-
-cart1 << "Jabłko"  # Usunięcie jabłek z koszyka
+print("Zawartość koszyka 1:")
 print(cart1)
+print(f"Wartość koszyka 1: {float(cart1)} PLN")
+print(f"Liczba produktów w koszyku 1: {len(cart1)}")
+
+# Sprawdzenie operatorów porównania
+print(f"Czy koszyk 1 jest tańszy niż koszyk 2? {cart1 < cart2}")
+print(f"Czy koszyk 1 i 2 mają taką samą wartość? {cart1 == cart2}")
+
+# Połączenie koszyków
+cart3 = cart1 + cart2
+print("Zawartość połączonego koszyka:")
+print(cart3)
+print(f"Wartość koszyka 3: {float(cart3)} PLN")
+
+# Usunięcie produktu
+cart1 << "Jabłko"
+print("Zawartość koszyka 1 po usunięciu jabłek:")
+print(cart1)
+
+# Dostęp do produktu
+print(f"Dostęp do bananów: {cart1['Banan']}")
+
+# Iteracja po produktach
+print("Iteracja po produktach w koszyku 3:")
+for product in cart3:
+    print(product)
+
+# Sprawdzenie, czy produkt jest w koszyku
+print(f"Czy 'Winogrona' są w koszyku 3? {'Winogrona' in cart3}")
+
+# Wywołanie instancji koszyka
+cart3()
