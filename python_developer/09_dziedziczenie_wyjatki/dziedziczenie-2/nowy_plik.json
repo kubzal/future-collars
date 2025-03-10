@@ -1,0 +1,17 @@
+[
+      {
+            "id": 100,
+            "name": "Jan Kowalski",
+            "city": "Warszawa"
+      },
+      {
+            "id": 200,
+            "name": "Konrad Paw\u0142owski",
+            "city": "Krak\u00f3w"
+      },
+      {
+            "id": 300,
+            "name": "Gra\u017cyna Nowak",
+            "city": "Pozna\u0144"
+      }
+]
