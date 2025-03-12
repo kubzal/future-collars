@@ -162,3 +162,30 @@ def silnia(n):
 print(silnia(5))
 print(silnia(5))  # Powinien zwrócić wynik z cache
 print(silnia(6))  # Obliczy wynik tylko dla n = 6, bo wynik dla 5 już jest w cache
+
+
+# Przykład 6: Dekorator (retry) ponawiający próby wykonania funkcji n razy
+def retry_decorator(n):
+    def dekorator(funkcja):
+        def opakowanie(*args, **kwargs):
+            for i in range(n):
+                try:
+                    return funkcja(*args, **kwargs)
+                except Exception as e:
+                    print(f"Błąd: {e}. Ponawiam próbę {i + 1}/{n}")
+
+        return opakowanie
+
+    return dekorator
+
+# Przykładowa funkcja, która czasami zwraca błąd
+import random
+
+@retry_decorator(3)
+def losowa_funkcja():
+    if random.random() < 0.5:
+        raise ValueError("Błąd!")
+    return "Sukces!"
+
+
+print(losowa_funkcja())
