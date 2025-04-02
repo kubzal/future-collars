@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+</head>
+<body>
+
+<!-- flexbox grid example -->
+<div class="container">
+    <div class="columns">
+      <div class="column col-4"></div>
+      <div class="column col-4">
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="divider"></div>
+
+        <div>
+            {% for msg in get_flashed_messages() %}
+            <div class="toast toast-success">
+                {{ msg }}
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+      <div class="column col-4"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
