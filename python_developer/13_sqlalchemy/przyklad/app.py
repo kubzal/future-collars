@@ -29,7 +29,7 @@ db = SQLAlchemy(app)
 # alembic = Alembic(app)
 # alembic.init_app(app)
 
-# w terminalu: 
+# w terminalu:
 # > flask db revision initial
 # > flask db upgrade
 
@@ -39,11 +39,12 @@ class Book(db.Model):
     title = db.Column(db.String(120), nullable=False)
     author = db.Column(db.String(120), nullable=False)
     quantity = db.Column(db.Integer, nullable=False, default=0)
-    
+
     # Późniejsze dodanie kolumny borrowed
     # borrowed = db.Column(db.Boolean, default=False)
     # pip install flask-alembic
-    
+
+
 # Dlaczego używamy app.app_context()?
 # Ponieważ tworzymy tabele w kontekście aplikacji Flask.
 # W przeciwnym razie, jeśli nie użyjemy app.app_context(),
@@ -52,16 +53,16 @@ class Book(db.Model):
 # Tworzenie tabeli w bazie danych
 with app.app_context():
     db.create_all()  # Tworzenie tabeli w bazie danych
-    
+
 
 @app.route("/")
 def index():
     # new_book = Book(title="Python Programming", author="John Doe", quantity=5)
-    
+
     # ## podstawowy sposób dodawania do bazy danych
     # # db.session.add(new_book)  # Dodanie nowej książki do sesji
     # # db.session.commit()  # Zatwierdzenie sesji
-    
+
     # ## alternatywnie
     # try:
     #     db.session.add(new_book)  # Dodanie nowej książki do sesji
@@ -71,10 +72,10 @@ def index():
     #     print(f"Error: {e}")
     # finally:
     #     db.session.close()  # Zamknięcie sesji
-        
+
     # Pobranie wszystkich książek z bazy danych
     books = Book.query.all()
-        
+
     return render_template("index.html", books=books)
 
 
@@ -84,40 +85,40 @@ def add_book():
         title = request.form["title"]
         author = request.form["author"]
         quantity = int(request.form["quantity"])
-        
+
         # Wypisanie danych do konsoli
         print(f"Title: {title}, Author: {author}, Quantity: {quantity}")
-        
+
         # Sprawdzenie, czy książka już istnieje
         book = db.session.query(Book).filter_by(title=title).first()
-        
+
         if book:
             # Jeśli książka już istnieje, zwiększamy jej ilość
             print("Książka już istnieje w bazie danych.")
             print(f"Zwiększamy ilość książki o {quantity}.")
-            
+
             flash(f"Zwiększamy ilość książki {title} o {quantity}.")
-            
+
             book.quantity += quantity
         else:
             # Jeśli książka nie istnieje, tworzymy nowy obiekt Book
             # i dodajemy go do bazy danych
             print("Książka nie istnieje w bazie danych.")
-            
+
             flash(f"Książka {title} została dodana do bazy danych.")
-            
+
             # Tworzenie nowego obiektu Book
-            # i dodanie go do bazy danych    
+            # i dodanie go do bazy danych
             book = Book(title=title, author=author, quantity=quantity)
             db.session.add(book)  # Dodanie nowej książki do sesji
-        
+
         # Zatwierdzenie sesji (z obu przypadków)
         db.session.commit()
 
-        
         return redirect(url_for("index"))  # Przekierowanie do strony głównej
 
     return render_template("add_book.html")
+
 
 @app.route("/delete-book")
 def delete_book():
@@ -130,23 +131,23 @@ def delete_book():
         flash(f"Książka {book.title} została usunięta z bazy danych.")
     else:
         flash("Nie znaleziono książki o podanym ID.")
-    
+
     return redirect(url_for("index"))
+
 
 @app.route("/increment-book")
 def increment_book():
     book_id = int(request.args.get("book_id"))
     book = db.session.query(Book).filter_by(id=book_id).first()
     print(f"Zwiększamy ilość książki {book.title} (id = {book.id}) o 1.")
-    
+
     if book:
         book.quantity += 1
         db.session.commit()
         flash(f"Ilość książki {book.title} została zwiększona o 1.")
-        
+
     return redirect(url_for("index"))
 
 
-    
 if __name__ == "__main__":
     app.run(debug=True)
